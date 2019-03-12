@@ -13,3 +13,7 @@ This is the "Brain Game".
 # Asciinema
 
 [![asciicast](https://asciinema.org/a/qZcBB97qlAs5jUGsBZFlreOCN.svg)](https://asciinema.org/a/qZcBB97qlAs5jUGsBZFlreOCN)
+
+# require Asciinema
+
+[![asciicast](https://asciinema.org/a/YbJAbx40RM7QDYsOiBbTHq4yL.svg)](https://asciinema.org/a/YbJAbx40RM7QDYsOiBbTHq4yL)
