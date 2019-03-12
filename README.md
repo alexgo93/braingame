@@ -11,3 +11,5 @@ composer require
 This is the "Brain Game".
 
 # Asciinema
+
+[![asciicast](https://asciinema.org/a/qZcBB97qlAs5jUGsBZFlreOCN.svg)](https://asciinema.org/a/qZcBB97qlAs5jUGsBZFlreOCN)
