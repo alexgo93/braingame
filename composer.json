@@ -10,7 +10,7 @@
 	  "src/run.php"
 	]
     },
-    "bin": ["bin/run"],
+    "bin": ["bin/brain_games"],
     "license": "MIT",
     "authors": [
         {
