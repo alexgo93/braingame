@@ -13,6 +13,7 @@ function isEvenGame()
         $answer = input();
         if (isEven($digit) && $answer === 'yes' || !isEven($digit) && $answer === 'no') {
             $round++;
+            out("Congratulation\n");
             return isEvenGame();
         }
             $round = 0;
@@ -23,7 +24,7 @@ function isEvenGame()
         }
             return true;
     }
-    out("Congratulation, you win!\n");
+
     return true;
 }
 
@@ -31,5 +32,5 @@ function isEvenGame()
 
 function isEven($digit)
 {
-    return $digit % 2 == 0;
+    return $digit % 2 === 0;
 }
