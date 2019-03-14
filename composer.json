@@ -7,10 +7,14 @@
     },
     "autoload": {
         "files": [
-	  "src/run.php"
+	  "src/run.php",
+	  "src/isEven.php"
 	]
     },
-    "bin": ["bin/brain_games"],
+    "bin": [
+	"bin/brain_games",
+	"bin/Even"
+	],
     "license": "MIT",
     "authors": [
         {
