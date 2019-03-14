@@ -11,10 +11,7 @@ function isEvenGame()
     while ($round < 3) {
         out("Is " . $digit . " Even?\n");
         $answer = input();
-        if (isEven($digit) && $answer === 'yes') {
-            $round++;
-            return isEvenGame();
-        } elseif (!isEven($digit) && $answer === 'no') {
+        if (isEven($digit) && $answer === 'yes' || !isEven($digit) && $answer === 'no') {
             $round++;
             return isEvenGame();
         }
