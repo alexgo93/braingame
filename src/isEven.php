@@ -6,26 +6,25 @@ use function \cli\input;
 function isEvenGame()
 {
     $digit = rand(1, 100);
-    static $counter = 0;
+    static $round = 0;
 
-    while ($counter < 3) {
+    while ($round < 3) {
         out("Is " . $digit . " Even?\n");
         $answer = input();
         if (isEven($digit) && $answer === 'yes') {
-            $counter++;
+            $round++;
             return isEvenGame();
         } elseif (!isEven($digit) && $answer === 'no') {
-            $counter++;
+            $round++;
             return isEvenGame();
-        } else {
-            $counter = 0;
+        }
+            $round = 0;
             out("Your loose! Want to try again? \n");
             $looseInput = input();
-            if ($looseInput === 'yes') {
-                return isEvenGame();
-            }
-            return false;
+        if ($looseInput === 'yes') {
+            return isEvenGame();
         }
+            return true;
     }
     out("Congratulation, you win!\n");
     return true;
