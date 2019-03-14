@@ -6,4 +6,4 @@ install:
   - make update
 
 script:
-  - make linter
+  - composer run-script phpcs -- --standard=PSR1,PSR2 bin src

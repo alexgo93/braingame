@@ -21,5 +21,8 @@
     "require": {	
 	"php": "7.2.*",
         "wp-cli/php-cli-tools": "^0.11.11"
-    }
+    },
+    "scripts": {
+ 	"phpcs": "phpcs"
+	}
 }
