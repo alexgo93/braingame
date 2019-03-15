@@ -3,10 +3,11 @@
 use function \cli\out;
 use function \cli\input;
 
+const ROUNDS = 3;
 function playCalcGame()
 {
     run();
-    calcTaskGeneration();
+    engineCalc();
 }
 
 function sum($a, $b)
@@ -22,9 +23,16 @@ function multiplication($a, $b)
     return $a * $b;
 }
 
+function engineCalc()
+{
+    for ($i = 0; $i < ROUNDS; $i++) {
+          calcTaskGeneration();
+    }
+}
+
+
 function calcTaskGeneration()
 {
-    static $round = 0;
 
     $firstDigit = rand(0, 100);
     $secondDigit = rand(0, 100);
@@ -34,22 +42,19 @@ function calcTaskGeneration()
     $rightAnswer = rightAnswer($firstDigit, $sign, $secondDigit);
 
 
-    while ($round < 3) {
+
         out("Your task: $task \n");
         $answer = input();
 
-        if ($answer == $rightAnswer) {
-            out("Congratulation! \n");
-            $round++;
-            return calcTaskGeneration();
-        }
-        $round = 0;
+    if ($answer == $rightAnswer) {
+        out("Congratulation! \n");
+    } else {
         out("Your loose! Want to try again? \n");
         $looseInput = input();
         if ($looseInput === 'yes') {
-            return calcTaskGeneration();
+            return engineCalc();
         }
-        return true;
+        return false;
     }
 }
 
