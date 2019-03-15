@@ -5,6 +5,12 @@ use function \cli\input;
 
 function playEvenGame()
 {
+    run();
+    game();
+}
+
+function game()
+{
     $digit = rand(1, 100);
     static $round = 0;
 
@@ -14,20 +20,17 @@ function playEvenGame()
         if (isEven($digit) && $answer === 'yes' || !isEven($digit) && $answer === 'no') {
             $round++;
             out("Congratulation\n");
-            return playEvenGame();
+            return game();
         }
-            $round = 0;
-            out("Your loose! Want to try again? \n");
-            $looseInput = input();
+        $round = 0;
+        out("Your loose! Want to try again? \n");
+        $looseInput = input();
         if ($looseInput === 'yes') {
-            return playEvenGame();
+            return game();
         }
-            return true;
+        return true;
     }
-
-    return true;
 }
-
 function isEven($digit)
 {
     return $digit % 2 === 0;
