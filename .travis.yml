@@ -3,7 +3,7 @@ php:
   - '7.2'
 
 install:
-  - make update
+  - make install
 
 script:
-  - composer run-script phpcs -- --standard=PSR1,PSR2 bin src
+  - make linter

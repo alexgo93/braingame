@@ -3,7 +3,7 @@
 use function \cli\out;
 use function \cli\input;
 
-function isEvenGame()
+function playEvenGame()
 {
     $digit = rand(1, 100);
     static $round = 0;
@@ -14,21 +14,19 @@ function isEvenGame()
         if (isEven($digit) && $answer === 'yes' || !isEven($digit) && $answer === 'no') {
             $round++;
             out("Congratulation\n");
-            return isEvenGame();
+            return playEvenGame();
         }
             $round = 0;
             out("Your loose! Want to try again? \n");
             $looseInput = input();
         if ($looseInput === 'yes') {
-            return isEvenGame();
+            return playEvenGame();
         }
             return true;
     }
 
     return true;
 }
-
-
 
 function isEven($digit)
 {
