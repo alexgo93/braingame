@@ -6,10 +6,26 @@ use function \cli\input;
 function playEvenGame()
 {
     run();
-    game();
+    evenTask();
 }
 
-function game()
+
+function evenTask()
+{
+    $digit = rand(0, 100);
+    out("Is " . $digit . " Even?\n");
+    $rightAnswer = isEven($digit) ? "yes" : "no";
+    return playGame(evenTask(), $rightAnswer);
+}
+
+
+function isEven($digit)
+{
+    return $digit % 2 === 0;
+}
+
+
+/* function game()
 {
     $digit = rand(1, 100);
     static $round = 0;
@@ -30,8 +46,4 @@ function game()
         }
         return true;
     }
-}
-function isEven($digit)
-{
-    return $digit % 2 === 0;
-}
+} */

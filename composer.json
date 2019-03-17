@@ -14,7 +14,8 @@
         "files": [
 	  "src/run.php",
 	  "src/playEvenGame.php",
-          "src/playCalcGame.php"
+          "src/playCalcGame.php",
+            "src/brainInterface.php"
 	]
     },
     "license": "MIT",
