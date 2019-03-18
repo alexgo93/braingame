@@ -6,7 +6,6 @@ use function \cli\input;
 const ROUNDS = 3;
 function playCalcGame()
 {
-    run();
     engineCalc();
 }
 

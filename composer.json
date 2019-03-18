@@ -3,7 +3,6 @@
     "description": "game",
     "type": "library",
     "bin": [
-      "bin/brain_games",
       "bin/game-even",
       "bin/game-calc"
     ],
@@ -12,10 +11,9 @@
     },
     "autoload": {
         "files": [
-	  "src/run.php",
 	  "src/playEvenGame.php",
           "src/playCalcGame.php",
-            "src/brainInterface.php"
+            "src/brainEngine.php"
 	]
     },
     "license": "MIT",
