@@ -3,27 +3,17 @@
 use function \cli\out;
 use function \cli\input;
 
-function isRightAnswer($rightAnswer)
+function playGame($game)
 {
-    $userAnswer = input();
-    return $userAnswer === $rightAnswer;
-}
+    for ($i = 0; $i < 3; $i++) {
+        $gameData = $game();
+        $rightAnswer = $gameData[0];
+        $task = $gameData[1];
+        $userAnswer = input();
 
-function playGame($task, $rightAnswer)
-{
-    if (isRightAnswer($rightAnswer)) {
-        out('Congratulation!');
-        return $task;
+        if ($userAnswer === $rightAnswer) {
+            out('Congratulation!');
+        }
+        return false;
     }
-    return loose($task);
-}
-
-function loose($task)
-{
-    out("Your loose!Want to try again?");
-    $userInput = input();
-    if ($userInput === "yes") {
-        return $task;
-    }
-    return false;
 }

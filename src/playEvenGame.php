@@ -2,22 +2,22 @@
 
 use function \cli\out;
 use function \cli\input;
-use function playGame;
 
 function playEvenGame()
 {
     evenTask();
 }
+
+
 function evenTask()
 {
-    $task = function(){
+    $game = function () {
         $digit = rand(0, 100);
-        out("Is " . $digit . " Even?\n");
+        $task = out("Is " . $digit . " Even?\n");
         $rightAnswer = isEven($digit) ? "yes" : "no";
-        return $rightAnswer;
+        return [$rightAnswer, $task];
     };
-
-    playGame($task);
+    playGame($game);
 }
 
 
@@ -25,7 +25,6 @@ function isEven($digit)
 {
     return $digit % 2 === 0;
 }
-
 
 
 
