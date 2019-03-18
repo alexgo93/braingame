@@ -5,15 +5,16 @@ use function \cli\input;
 
 function playGame($game)
 {
-    for ($i = 0; $i < 3; $i++) {
         $gameData = $game();
         $rightAnswer = $gameData[0];
         $task = $gameData[1];
+        out($task);
         $userAnswer = input();
 
-        if ($userAnswer === $rightAnswer) {
-            out('Congratulation!');
-        }
+    if ($userAnswer == $rightAnswer) {
+        out('Congratulation!');
+    } else {
+        out("Your loose!");
         return false;
     }
 }

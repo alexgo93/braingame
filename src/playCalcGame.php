@@ -3,10 +3,9 @@
 use function \cli\out;
 use function \cli\input;
 
-const ROUNDS = 3;
 function playCalcGame()
 {
-    engineCalc();
+    calcTaskGeneration();
 }
 
 function sum($a, $b)
@@ -22,39 +21,20 @@ function multiplication($a, $b)
     return $a * $b;
 }
 
-function engineCalc()
-{
-    for ($i = 0; $i < ROUNDS; $i++) {
-          calcTaskGeneration();
-    }
-}
-
 
 function calcTaskGeneration()
 {
+    $game = function () {
+        $firstDigit = rand(0, 100);
+        $secondDigit = rand(0, 100);
+        $signArray = ['+', '-', '*'];
+        $sign = $signArray[array_rand($signArray, 1)];
+        $task = $firstDigit . " " . $sign . " " . $secondDigit . "\n";
+        $rightAnswer = rightAnswer($firstDigit, $sign, $secondDigit);
 
-    $firstDigit = rand(0, 100);
-    $secondDigit = rand(0, 100);
-    $signArray = ['+', '-', '*'];
-    $sign = $signArray[array_rand($signArray, 1)];
-    $task = $firstDigit . " " . $sign . " " . $secondDigit;
-    $rightAnswer = rightAnswer($firstDigit, $sign, $secondDigit);
-
-
-
-        out("Your task: $task \n");
-        $answer = input();
-
-    if ($answer == $rightAnswer) {
-        out("Congratulation! \n");
-    } else {
-        out("Your loose! Want to try again? \n");
-        $looseInput = input();
-        if ($looseInput === 'yes') {
-            return engineCalc();
-        }
-        return false;
-    }
+        return [$rightAnswer, $task];
+    };
+    playGame($game);
 }
 
 function rightAnswer($firstDigit, $sign, $secondDigit)
