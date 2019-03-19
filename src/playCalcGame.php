@@ -1,32 +1,17 @@
 <?php
 
-use function \cli\out;
-use function \cli\input;
+const BEGIN = 1;
+const END = 100;
+const DESCRIPTION = "Find the meaning of the expression \n";
 
-function playCalcGame()
-{
-    calcTaskGeneration();
-}
 
-function sum($a, $b)
-{
-    return $a + $b;
-}
-function subtraction($a, $b)
-{
-    return $a - $b;
-}
-function multiplication($a, $b)
-{
-    return $a * $b;
-}
 
 
 function calcTaskGeneration()
 {
     $game = function () {
-        $firstDigit = rand(0, 100);
-        $secondDigit = rand(0, 100);
+        $firstDigit = rand(BEGIN, END);
+        $secondDigit = rand(BEGIN, END);
         $signArray = ['+', '-', '*'];
         $sign = $signArray[array_rand($signArray, 1)];
         $task = $firstDigit . " " . $sign . " " . $secondDigit . "\n";
@@ -34,20 +19,20 @@ function calcTaskGeneration()
 
         return [$rightAnswer, $task];
     };
-    playGame($game);
+    playGame($game, DESCRIPTION);
 }
 
 function rightAnswer($firstDigit, $sign, $secondDigit)
 {
     switch ($sign) {
         case '+':
-            $result = sum($firstDigit, $secondDigit);
+            $result = $firstDigit + $secondDigit;
             break;
         case '-':
-            $result = subtraction($firstDigit, $secondDigit);
+            $result = $firstDigit - $secondDigit;
             break;
         case '*':
-            $result = multiplication($firstDigit, $secondDigit);
+            $result = $firstDigit * $secondDigit;
             break;
     }
     return $result;

@@ -3,8 +3,9 @@
     "description": "game",
     "type": "library",
     "bin": [
-      "bin/game-even",
-      "bin/game-calc"
+      "bin/brain-calc",
+      "bin/brain-calc",
+        "bin/brain-simple"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4"
@@ -13,7 +14,8 @@
         "files": [
 	  "src/playEvenGame.php",
           "src/playCalcGame.php",
-            "src/brainEngine.php"
+            "src/brainEngine.php",
+            "src/playSimpleGame.php"
 	]
     },
     "license": "MIT",
