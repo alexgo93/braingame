@@ -3,10 +3,12 @@
 use function \cli\out;
 use function \cli\input;
 
+const ROUNDS = 3;
+
 function playGame($game, $description)
 {
     out($description);
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $gameData = $game();
         $rightAnswer = $gameData[0];
         $task = $gameData[1];

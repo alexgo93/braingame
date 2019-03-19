@@ -1,7 +1,6 @@
 <?php
-const BEGIN = 1;
-const END = 100;
-const DESCRIPTION = "Answer 'yes' if number is simple, else answer 'no'. \n";
+
+const DESCRIPTION_SIMPLE = "Answer 'yes' if number is simple, else answer 'no'. \n";
 
 
 function simpleTaskGeneration()
@@ -14,7 +13,7 @@ function simpleTaskGeneration()
         return [$rightAnswer, $task];
     };
 
-    playGame($game, DESCRIPTION);
+    playGame($game, DESCRIPTION_SIMPLE);
 }
 
 function isSimple($digit)

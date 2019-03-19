@@ -1,8 +1,6 @@
 <?php
 
-const BEGIN = 1;
-const END = 100;
-const DESCRIPTION = "Find the meaning of the expression \n";
+const DESCRIPTION_CALC = "Find the meaning of the expression \n";
 
 
 
@@ -19,7 +17,7 @@ function calcTaskGeneration()
 
         return [$rightAnswer, $task];
     };
-    playGame($game, DESCRIPTION);
+    playGame($game, DESCRIPTION_CALC);
 }
 
 function rightAnswer($firstDigit, $sign, $secondDigit)

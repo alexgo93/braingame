@@ -12,10 +12,10 @@
     },
     "autoload": {
         "files": [
-	  "src/playEvenGame.php",
-          "src/playCalcGame.php",
+	  "src/games/playEvenGame.php",
+          "src/games/playCalcGame.php",
             "src/brainEngine.php",
-            "src/playSimpleGame.php"
+            "src/games/playSimpleGame.php"
 	]
     },
     "license": "MIT",

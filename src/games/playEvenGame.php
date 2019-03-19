@@ -2,7 +2,7 @@
 
 const BEGIN = 1;
 const END = 100;
-const DESCRIPTION = "Answer 'yes' if number is even, else answer 'no'. \n";
+const DESCRIPTION_EVEN = "Answer 'yes' if number is even, else answer 'no'. \n";
 
 
 function evenTaskGeneration()
@@ -13,7 +13,7 @@ function evenTaskGeneration()
         $rightAnswer = isEven($digit) ? "yes" : "no";
         return [$rightAnswer, $task];
     };
-    playGame($game, DESCRIPTION);
+    playGame($game, DESCRIPTION_EVEN);
 }
 
 
