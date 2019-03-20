@@ -1,26 +1,23 @@
 <?php
 
-const DESCRIPTION_CALC = "Find the meaning of the expression \n";
+const CALC_GAME_DESCRIPTION = "Find the meaning of the expression \n";
 
-
-
-
-function calcTaskGeneration()
+function calcGame()
 {
     $game = function () {
         $firstDigit = rand(BEGIN, END);
         $secondDigit = rand(BEGIN, END);
         $signArray = ['+', '-', '*'];
         $sign = $signArray[array_rand($signArray, 1)];
-        $task = $firstDigit . " " . $sign . " " . $secondDigit . "\n";
-        $rightAnswer = rightAnswer($firstDigit, $sign, $secondDigit);
+        $task = "$firstDigit $sign $secondDigit . \n";
+        $rightAnswer = calc($firstDigit, $sign, $secondDigit);
 
         return [$rightAnswer, $task];
     };
-    playGame($game, DESCRIPTION_CALC);
+    initialization(CALC_GAME_DESCRIPTION, $game);
 }
 
-function rightAnswer($firstDigit, $sign, $secondDigit)
+function calc($firstDigit, $sign, $secondDigit)
 {
     switch ($sign) {
         case '+':

@@ -1,33 +1,40 @@
 {
     "name": "alexgo93/brain_game_php_alex",
-    "description": "game",
-    "type": "library",
+    "description": "This is the brain game",
+    "keywords": [
+      "brain_game",
+      "game"
+    ],
+    "homepage": "https://github.com/alexgo93/braingame",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Alex",
+        "email": "alekseimell5644@gmail.com"
+      }
+    ],
     "bin": [
       "bin/brain-calc",
       "bin/brain-calc",
-        "bin/brain-simple"
+      "bin/brain-prime",
+      "bin/brain-gcd"
     ],
+    "autoload": {
+      "files": [
+        "src/games/even.php",
+        "src/games/calc.php",
+        "src/brainEngine.php",
+        "src/games/prime.php",
+        "src/games/gcd.php"
+      ]
+    },
+    "require": {
+      "php": "7.2.*",
+      "wp-cli/php-cli-tools": "^0.11.11"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4"
-    },
-    "autoload": {
-        "files": [
-	  "src/games/playEvenGame.php",
-          "src/games/playCalcGame.php",
-            "src/brainEngine.php",
-            "src/games/playSimpleGame.php"
-	]
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Alex",
-            "email": "alekseimell5644@gmail.com"
-        }
-    ],
-    "require": {	
-	"php": "7.2.*",
-        "wp-cli/php-cli-tools": "^0.11.11"
     },
     "scripts": {
  	"phpcs": "phpcs"
